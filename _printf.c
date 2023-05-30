@@ -27,6 +27,9 @@ int _printf(const char *format, ...)
 				case '%':
 					len += print_percent(list);
 					break;
+				case 'd':
+					len += print_int(list);
+					break;
 				default:
 					len += write(1, format, 1);
 					break;
