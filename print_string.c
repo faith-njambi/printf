@@ -15,10 +15,10 @@ int print_string(va_list list)
 	if (str == NULL)
 		str = "(nil)";
 
-	while (*str != '\0')
+	while (str[len] != '\0')
 	{
-		len += write(1, str, 1);
-		str++;
+		write(1, &str[len], 1);
+		len++;
 	}
 
 	return (len);
