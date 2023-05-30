@@ -7,6 +7,6 @@
  */
 int print_percent(va_list list)
 {
-	UNUSED(list);
-	return (write(1, "%%", 1));
+	(void)list;
+	return (write(1, "%", 1));
 }

@@ -17,9 +17,8 @@ int print_string(va_list list)
 
 	while (str[len] != '\0')
 	{
-		write(1, &str[len], 1);
 		len++;
 	}
 
-	return (len);
+	return (write(1, str, len));
 }

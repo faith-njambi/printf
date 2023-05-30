@@ -9,7 +9,6 @@ int print_char(va_list list)
 {
 	char c;
 
-	c = (char)va_arg(list, int);
-	write(1, &c, 1);
-	return (1);
+	c = va_arg(list, int);
+	return (write(1, &c, 1));
 }

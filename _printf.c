@@ -11,9 +11,11 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	va_start(list, format);
+	if (format == NULL)
+		return (-1);
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *format != '\0')
 		{
 			format++;
 			switch (*format)
@@ -32,15 +34,13 @@ int _printf(const char *format, ...)
 					len += print_int(list);
 					break;
 				default:
-					write(1, format, 1);
-					len++;
+					len += write(1, format, 1);
 					break;
 			}
 		}
 		else
 		{
-			write(1, format, 1);
-			len++;
+			len += write(1, format, 1);
 		}
 		format++;
 	}
