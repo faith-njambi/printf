@@ -32,13 +32,15 @@ int _printf(const char *format, ...)
 					len += print_int(list);
 					break;
 				default:
-					len += write(1, format, 1);
+					write(1, format, 1);
+					len++;
 					break;
 			}
 		}
 		else
 		{
-			len += write(1, format, 1);
+			write(1, format, 1);
+			len++;
 		}
 		format++;
 	}
